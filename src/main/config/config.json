@@ -1,0 +1,11 @@
+{
+  "PROJECT_NAMES": [
+    "BOOKKEEPER",
+    "SYNCOPE"
+  ],
+  "REPO_PATH": [
+    "/home/ludovico/IdeaProjects/syncope/.git",
+    "/home/ludovico/IdeaProjects/syncope/.git"
+],
+  "LOG_FILE_NAME" : "log.txt"
+}
