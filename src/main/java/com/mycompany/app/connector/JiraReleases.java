@@ -58,7 +58,6 @@ public class JiraReleases {
 
     private static void createReleases(List<Map.Entry<String, LocalDateTime>> entryList, List<Release> releaseList) {
         for (Map.Entry<String, LocalDateTime> entry : entryList) {
-            printProgressBar(entry.getKey(),entryList.indexOf(entry), entryList.size());
             Release release = new Release(entry.getKey(), entry.getValue());
             releaseList.add(release);
         }
@@ -68,11 +67,6 @@ public class JiraReleases {
     private static void addRelease(HashMap<String,LocalDateTime> releasesMap, String name, LocalDateTime date, String projName) {
         String[] tkn = name.split("-");
         if (!name.contains("-") || tkn.length == 0) {
-            /*if (Objects.equals(projName, "BOOKKEEPER")){
-                releasesMap.put("refs/tags/release-" + name, date);
-            } else if (!name.split("\\.")[0].equals(String.valueOf(0))){
-                releasesMap.put("refs/tags/" + name, date);
-            }*/
             if (Objects.equals(projName, "BOOKKEEPER")) {
                 releasesMap.put("refs/tags/release-" + name, date);
             } else{
@@ -82,21 +76,4 @@ public class JiraReleases {
         }
     }
 
-    public static void printProgressBar(String name, int progress, int total) {
-        int percent = (int) ((float) progress / (float) total * 100);
-        System.out.print("\r" + name + " :: [");
-        for (int i = 0; i < 50; i++) {
-            if (i < (percent / 2)) {
-                System.out.print("=");
-            } else if (i == (percent / 2)) {
-                System.out.print(">");
-            } else {
-                System.out.print(" ");
-            }
-        }
-        System.out.print("] " + percent + "%  ");
-        if (progress == total) {
-            System.out.print("\n");
-        }
-    }
 }

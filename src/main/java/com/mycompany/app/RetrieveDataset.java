@@ -368,9 +368,6 @@ public class RetrieveDataset {
                     System.out.println(issue.getKey());
                 }
 
-                for(Release release:releaseList){
-                    System.out.println(release.getCommits().size());
-                }
 
                 if (releaseList.size()%2 == 0)
                     releaseList = releaseList.subList(0, releaseList.size()/2);
