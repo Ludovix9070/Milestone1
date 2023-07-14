@@ -364,9 +364,6 @@ public class RetrieveDataset {
 
                 // JIRA: prendo la lista di issue bug fix
                 issueList = retrieveIssues(projectName, releaseList);
-                for(Issue issue:issueList){
-                    System.out.println(issue.getKey());
-                }
 
 
                 if (releaseList.size()%2 == 0)
